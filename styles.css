@@ -1,3 +1,4 @@
+/* Reset styles */
 * {
   margin: 0;
   padding: 0;
@@ -5,7 +6,7 @@
 }
 
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
   line-height: 1.6;
   background-color: #f4f4f4;
   color: #333;
@@ -46,6 +47,21 @@ header nav ul li a {
   color: #fff;
   text-decoration: none;
   font-size: 18px;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: white;
+  margin: 4px;
+  border-radius: 5px;
 }
 
 .hero-section {
@@ -134,58 +150,37 @@ footer {
   text-align: center;
 }
 
-/* Media Queries for Responsiveness */
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  header .container {
-    flex-direction: column;
+  .hamburger {
+    display: flex;
   }
 
   header nav ul {
+    display: none;
     flex-direction: column;
-    margin-top: 10px;
+    width: 100%;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    text-align: center;
+  }
+
+  header nav ul.active {
+    display: flex;
   }
 
   header nav ul li {
     margin: 10px 0;
   }
 
-  .hero-section h1 {
-    font-size: 36px;
-  }
-
-  .hero-section p {
-    font-size: 18px;
+  header .container {
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   .features-grid {
     grid-template-columns: 1fr;
-    margin-top: 20px;
-  }
-
-  .about-section p {
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-section {
-    padding: 60px 20px;
-  }
-
-  .hero-section h1 {
-    font-size: 28px;
-  }
-
-  .hero-section p {
-    font-size: 16px;
-  }
-
-  .download-section h2 {
-    font-size: 28px;
-  }
-
-  .download-btn {
-    padding: 10px 20px;
-    font-size: 16px;
   }
 }
